@@ -1,10 +1,24 @@
-this is22 second file and 33 good
-ggg
-ggggaaa
-123456
-
-afdfs
-asfdsfsa
-afdsf
-
-sfsfsd
+@Override
+public void onProvideAutofillVirtualStructure(ViewStructure structure, int flags) {
+    // Build a ViewStructure that will get passed to the AutofillService by the framework
+    // when it is time to find autofill suggestions.
+    structure.setClassName(getClass().getName());
+    int childrenSize = mItems.size();
+    int index = structure.addChildCount(childrenSize);
+    // Traverse through the view hierarchy, including virtual child views. For each view, we
+    // need to set the relevant autofill metadata and add it to the ViewStructure.
+    for (int i = 0; i < childrenSize; i++) {
+        Item item = mItems.valueAt(i);
+        ViewStructure child = structure.newChild(index);
+        child.setAutofillId(structure, item.id);
+        child.setAutofillHints(item.hints);
+        child.setAutofillType(item.type);
+        child.setDataIsSensitive(!item.sanitized);
+        child.setText(item.text);
+        child.setAutofillValue(AutofillValue.forText(item.text));
+        child.setFocused(item.focused);
+        child.setId(item.id, getContext().getPackageName(), null, item.line.idEntry);
+        child.setClassName(item.getClassName());
+        index++;
+    }
+}
