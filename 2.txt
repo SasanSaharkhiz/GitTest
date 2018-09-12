@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @Override
 public void onProvideAutofillVirtualStructure(ViewStructure structure, int flags) {
     // Build a ViewStructure that will get passed to the AutofillService by the framework
@@ -26,3 +27,4 @@ public void onProvideAutofillVirtualStructure(ViewStructure structure, int flags
         index++;
     }
 }
+

@@ -1,3 +1,18 @@
-this is first file
-
-x1
+ <ImageButton
+        android:id="@+id/movies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/auto"
+        android:layout_alignRight="@+id/auto"
+        android:layout_below="@+id/auto"
+        android:layout_marginTop="36dp"
+        android:src="@drawable/moviesxx" />
+ 
+    <ImageButton
+        android:id="@+id/metro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/metroxx" />
