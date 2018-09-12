@@ -16,6 +16,10 @@ public void onProvideAutofillVirtualStructure(ViewStructure structure, int flags
         child.setDataIsSensitive(!item.sanitized);
         child.setText(item.text);
         child.setAutofillValue(AutofillValue.forText(item.text));
+ child.setAutofillType(item.type);
+        child.setDataIsSensitive(!item.sanitized);
+        child.setText(item.text);
+        child.setAutofillValue(AutofillValue.forText(item.text));
         child.setFocused(item.focused);
         child.setId(item.id, getContext().getPackageName(), null, item.line.idEntry);
         child.setClassName(item.getClassName());
